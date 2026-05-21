@@ -1,0 +1,15 @@
+meta {
+  name: Suche (Alle Rollen – 200)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/users/search?q={{test_sam}}
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.results: isDefined
+}

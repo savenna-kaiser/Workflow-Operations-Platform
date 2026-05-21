@@ -1,0 +1,34 @@
+meta {
+  name: Login (IT-Admin)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/auth/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "{{admin_user}}",
+    "password": "{{admin_pass}}"
+  }
+}
+
+vars:pre-request {
+  admin_user: Admin.Ituser
+  admin_pass: Ananas2023!
+}
+
+assert {
+  res.status: eq 200
+  res.body.ok: eq true
+  res.body.user.samAccountName: eq {{admin_user}}
+  res.body.user.role: eq it-admin
+}
+
+script:post-response {
+  bru.setVar("current_user", res.getBody().user?.samAccountName);
+}

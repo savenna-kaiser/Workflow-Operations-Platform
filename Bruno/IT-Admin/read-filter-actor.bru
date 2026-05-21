@@ -1,0 +1,21 @@
+meta {
+  name: Audit lesen (Filter nach Actor)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/audit?actor={{test_sam}}&limit=20
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Zeigt alle Audit-Einträge für einen bestimmten User.
+  Nützlich für Nachvollziehbarkeit einzelner Accounts.
+}
+
+assert {
+  res.status: eq 200
+  res.body.entries: isDefined
+}

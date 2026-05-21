@@ -1,0 +1,26 @@
+meta {
+  name: Gruppe hinzufügen (Helpdesk – 403)
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/groups
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "groupDn": "{{test_group_dn}}"
+  }
+}
+
+docs {
+  Voraussetzung: Als Helpdesk eingeloggt.
+  Erwartet: 403 – Helpdesk darf keine Gruppen hinzufügen.
+}
+
+assert {
+  res.status: eq 403
+}

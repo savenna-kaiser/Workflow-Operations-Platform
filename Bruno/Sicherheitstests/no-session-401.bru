@@ -1,0 +1,20 @@
+meta {
+  name: Kein Cookie (Unauthentifiziert – 401)
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/unlock
+  body: none
+  auth: none
+}
+
+docs {
+  Kein Session-Cookie vorhanden (Browser-Cookie löschen oder frischer Request).
+  Erwartet: 401 – requireAuth schlägt an bevor RBAC geprüft wird.
+}
+
+assert {
+  res.status: eq 401
+}

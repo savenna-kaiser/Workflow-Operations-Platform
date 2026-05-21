@@ -1,0 +1,21 @@
+meta {
+  name: Unlock (Helpdesk – 200)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/unlock
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als Helpdesk eingeloggt.
+  Unlock ist eine der wenigen Aktionen die Helpdesk erlaubt sind.
+}
+
+assert {
+  res.status: eq 200
+  res.body.ok: eq true
+}

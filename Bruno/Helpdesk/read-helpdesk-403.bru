@@ -1,0 +1,19 @@
+meta {
+  name: Audit lesen (Helpdesk – 403)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/audit
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als Helpdesk eingeloggt.
+  Erwartet: 403 – Helpdesk hat keine audit:read Berechtigung.
+}
+
+assert {
+  res.status: eq 403
+}

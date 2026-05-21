@@ -1,0 +1,21 @@
+meta {
+  name: Batch Process (IT-Admin – 403)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/topdesk/process
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Erwartet: 403 – Batch-Verarbeitung ist nur IT-Lead erlaubt.
+  Das ist eine der wichtigsten RBAC-Grenzen im System.
+}
+
+assert {
+  res.status: eq 403
+}

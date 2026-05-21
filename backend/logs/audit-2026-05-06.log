@@ -1,0 +1,2 @@
+{"action":"AUTH_LOGIN","actor":"itadmin","details":{},"ip":"::ffff:127.0.0.1","level":"info","message":"AUTH_LOGIN","requestId":"faaf0eb7-9e29-4ac1-b4a9-1d3c1a54db5a","result":"success","target":"itadmin","targetType":"user","timestamp":"2026-05-06T12:33:28.405+02:00"}
+{"action":"AUTH_LOGOUT","actor":"itadmin","details":{},"ip":"::ffff:127.0.0.1","level":"info","message":"AUTH_LOGOUT","requestId":"1960acc9-9d6b-402d-8dd2-d4e96528b6da","result":"success","target":"itadmin","targetType":"user","timestamp":"2026-05-06T12:33:28.442+02:00"}

@@ -1,0 +1,20 @@
+meta {
+  name: Gruppen lesen (Helpdesk – 200)
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/api/users/{{test_sam}}/groups
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als Helpdesk eingeloggt.
+  Gruppen lesen ist für Helpdesk erlaubt.
+}
+
+assert {
+  res.status: eq 200
+  res.body.groups: isDefined
+}

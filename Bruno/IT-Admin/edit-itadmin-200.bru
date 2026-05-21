@@ -1,0 +1,29 @@
+meta {
+  name: Edit User (IT-Admin – 200)
+  type: http
+  seq: 11
+}
+
+put {
+  url: {{baseUrl}}/api/users/{{test_sam}}/edit
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Department": "IT",
+    "Title": "Systemadministrator",
+    "OfficePhone": "+49 7262 12345"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.ok: eq true
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Erwartet: 200 – erlaubte Felder werden akzeptiert.
+}

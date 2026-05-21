@@ -1,0 +1,28 @@
+meta {
+  name: Edit User (Unbekanntes Feld – 400)
+  type: http
+  seq: 10
+}
+
+put {
+  url: {{baseUrl}}/api/users/{{test_sam}}/edit
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ScriptPath": "\\\\evil\\payload.ps1"
+  }
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Erwartet: 400 – editUserSchema ist .strict(), unbekannte Felder werden abgelehnt.
+  Testet den Privilege-Escalation-Schutz.
+}
+
+assert {
+  res.status: eq 400
+  res.body.error: eq Validierungsfehler
+}

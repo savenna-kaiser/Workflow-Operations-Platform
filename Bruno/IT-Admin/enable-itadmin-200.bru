@@ -1,0 +1,21 @@
+meta {
+  name: Enable (IT-Admin – 200)
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/enable
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Sinnvoll nach disable ausführen um Testzustand zurückzusetzen.
+}
+
+assert {
+  res.status: eq 200
+  res.body.ok: eq true
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Login (Fehlende Felder)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/auth/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": ""
+  }
+}
+
+assert {
+  res.status: eq 400
+}

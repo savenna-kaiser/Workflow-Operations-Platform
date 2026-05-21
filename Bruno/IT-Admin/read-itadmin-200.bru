@@ -1,0 +1,22 @@
+meta {
+  name: Audit lesen (IT-Admin – 200)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/audit?limit=50&result=failure
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Erwartet: 200 – nur fehlgeschlagene Aktionen, max 50 Einträge.
+  Testet gleichzeitig die Filter-Parameter.
+}
+
+assert {
+  res.status: eq 200
+  res.body.entries: isDefined
+  res.body.count: isDefined
+}

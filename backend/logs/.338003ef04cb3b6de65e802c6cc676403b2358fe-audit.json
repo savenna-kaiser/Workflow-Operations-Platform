@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\AD Manager Dashboard\\backend\\logs\\.338003ef04cb3b6de65e802c6cc676403b2358fe-audit.json",
+    "files": [
+        {
+            "date": 1778063272938,
+            "name": "C:\\AD Manager Dashboard\\backend\\logs\\audit-2026-05-06.log",
+            "hash": "f01c42d30196a7e5536d5cc285da3d248eabbe5970dae03f1ba4dbe90d568b00"
+        },
+        {
+            "date": 1778478996132,
+            "name": "C:\\AD Manager Dashboard\\backend\\logs\\audit-2026-05-11.log",
+            "hash": "4502d037c9b708756d579738be2f7dc1c45fe86a12c0feda2686ca43d2c16351"
+        },
+        {
+            "date": 1778565003376,
+            "name": "C:\\AD Manager Dashboard\\backend\\logs\\audit-2026-05-12.log",
+            "hash": "7369a752be462a14cee9e4475eb9347718984a1678c820b46495116218e850bc"
+        },
+        {
+            "date": 1779078994400,
+            "name": "C:\\AD Manager Dashboard\\backend\\logs\\audit-2026-05-18.log",
+            "hash": "c482ee67e845913f695968fe16f91df2c3d4a4da593745fad496bb1944438dca"
+        },
+        {
+            "date": 1779167584919,
+            "name": "C:\\AD Manager Dashboard\\backend\\logs\\audit-2026-05-19.log",
+            "hash": "bbaab09038cc6a65ed8b84dc41ac381ac8d36c005c144141883ee38a45776fae"
+        }
+    ],
+    "hashType": "sha256"
+}

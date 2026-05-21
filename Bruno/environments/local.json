@@ -1,0 +1,59 @@
+{
+  "name": "local",
+  "variables": [
+    {
+      "name": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "helpdesk_user",
+      "value": "test.helpdesk",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "itadmin_password",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": true
+    },
+    {
+      "name": "admin_password",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": true
+    },
+    {
+      "name": "test_sam",
+      "value": "IT-Test",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "test_group_dn",
+      "value": "OU=CORP_RT, DC=company, DC=internal",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "topdesk_webhook_secret",
+      "value": "your-webhook-secret-here",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    }
+  ],
+  "info": {
+    "type": "bruno-environment",
+    "exportedAt": "2026-01-01T00:00:00.000Z",
+    "exportedUsing": "Bruno/v3.3.0"
+  }
+}

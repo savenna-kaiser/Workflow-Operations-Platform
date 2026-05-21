@@ -1,0 +1,16 @@
+[
+  {
+    "id": "A-1714300000-1234",
+    "timestamp": "2026-04-28T10:00:00Z",
+    "user": "admin",
+    "module": "ad",
+    "action": "updateUser",
+    "target": "m.mustermann",
+    "payload": {},
+    "status": "success",
+    "source": "web",
+    "meta": {
+      "ip": "127.0.0.1"
+    }
+  }
+]

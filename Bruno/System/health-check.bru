@@ -1,0 +1,24 @@
+meta {
+  name: Health Check
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/health
+  auth: none
+}
+
+docs {
+  Kein Login nötig.
+  Prüft ob PS-Worker laufen und Server erreichbar ist.
+  status: "ok" → alle Worker ready
+  status: "degraded" → mindestens ein Worker ausgefallen
+}
+
+assert {
+  res.status: in [200, 503]
+  res.body.status: isDefined
+  res.body.workers: isDefined
+  res.body.uptime: isDefined
+}

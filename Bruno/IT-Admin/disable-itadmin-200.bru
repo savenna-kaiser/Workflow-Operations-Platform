@@ -1,0 +1,21 @@
+meta {
+  name: Disable (IT-Admin – 200)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/disable
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt (login-itadmin.bru zuerst ausführen).
+  Erwartet: 200 OK – IT-Admin darf disable ausführen.
+}
+
+assert {
+  res.status: eq 200
+  res.body.ok: eq true
+}

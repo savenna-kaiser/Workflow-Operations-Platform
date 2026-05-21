@@ -1,0 +1,26 @@
+meta {
+  name: Gruppe hinzufügen (Ungültiger DN – 400)
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/groups
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "groupDn": "das-ist-kein-dn"
+  }
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Erwartet: 400 – DN-Regex-Validierung schlägt an.
+}
+
+assert {
+  res.status: eq 400
+}

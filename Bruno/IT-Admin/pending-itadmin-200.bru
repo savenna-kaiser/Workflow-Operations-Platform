@@ -1,0 +1,20 @@
+meta {
+  name: Pending Changes (IT-Admin – 200)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/topdesk/pending
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Erwartet: 200 – IT-Admin darf offene Changes einsehen.
+}
+
+assert {
+  res.status: eq 200
+  res.body.total: isDefined
+}

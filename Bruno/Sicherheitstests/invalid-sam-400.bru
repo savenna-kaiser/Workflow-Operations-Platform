@@ -1,0 +1,20 @@
+meta {
+  name: Ungültiger SAM-Account – 400
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/api/users/../../etc/passwd/disable
+  body: none
+  auth: none
+}
+
+docs {
+  Erwartet: 400 – SAM-Account-Validierung blockt Path-Traversal-Versuche.
+  Testet die samSchema-Regex-Validierung.
+}
+
+assert {
+  res.status: eq 400
+}

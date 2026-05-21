@@ -1,0 +1,21 @@
+meta {
+  name: Disable (Helpdesk – 403)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/users/{{test_sam}}/disable
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als Helpdesk eingeloggt (login-helpdesk.bru zuerst ausführen).
+  Erwartet: 403 Forbidden – Helpdesk darf disable nicht ausführen.
+}
+
+assert {
+  res.status: eq 403
+  res.body.error: contains Berechtigung
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Single Process (IT-Admin – 200)
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/topdesk/process/C2405-123
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Admin eingeloggt.
+  Change-ID anpassen auf eine echte ID aus TopDesk.
+  Erwartet: 200 – IT-Admin darf einzelne Changes verarbeiten.
+}
+
+assert {
+  res.status: eq 200
+}

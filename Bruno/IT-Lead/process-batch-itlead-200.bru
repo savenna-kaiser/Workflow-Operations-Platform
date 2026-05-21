@@ -1,0 +1,22 @@
+meta {
+  name: Batch Process (IT-Lead – 200)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/topdesk/process
+  body: none
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als IT-Lead eingeloggt.
+  Erwartet: 200 – IT-Lead darf Batch-Verarbeitung starten.
+  Achtung: Führt echte AD-Aktionen aus wenn TopDesk erreichbar ist.
+}
+
+assert {
+  res.status: eq 200
+  res.body.processed: isDefined
+}

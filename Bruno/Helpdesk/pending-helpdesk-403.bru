@@ -1,0 +1,19 @@
+meta {
+  name: Pending Changes (Helpdesk – 403)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/topdesk/pending
+  auth: none
+}
+
+docs {
+  Voraussetzung: Als Helpdesk eingeloggt.
+  Erwartet: 403 – Helpdesk hat keine topdesk:read Berechtigung.
+}
+
+assert {
+  res.status: eq 403
+}
